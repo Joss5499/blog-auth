@@ -27,15 +27,19 @@ function renderPosts(){
 
                 <div class="actions">
 
-                    <button onclick="editPost(${index})">
-                        Editar
-                    </button>
+    <button onclick="viewPost(${index})">
+        Ver
+    </button>
 
-                    <button onclick="deletePost(${index})">
-                        Eliminar
-                    </button>
+    <button onclick="editPost(${index})">
+        Editar
+    </button>
 
-                </div>
+    <button onclick="deletePost(${index})">
+        Eliminar
+    </button>
+
+</div>
 
             </div>
         
@@ -101,5 +105,11 @@ function editPost(index){
     }
 
 }
+function viewPost(index){
 
+    localStorage.setItem("selectedPost", JSON.stringify(posts[index]));
+
+    window.location.href = "post.html";
+
+}
 renderPosts();
