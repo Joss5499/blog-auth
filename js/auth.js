@@ -86,6 +86,7 @@ if(
 ){
     window.location.href = "login.html";
 }
+
 const welcomeUser = document.getElementById("welcomeUser");
 
 if(welcomeUser && loggedUser){

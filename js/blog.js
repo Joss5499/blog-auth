@@ -104,7 +104,7 @@ function editPost(index) {
 
 }
 
-function viewPost(index) {
+function viewPost(index){
 
     localStorage.setItem("selectedPost", JSON.stringify(posts[index]));
 
