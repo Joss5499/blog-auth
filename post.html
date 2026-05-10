@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicación</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 id="postTitle"></h1>
+
+        <p id="postContent"></p>
+
+        <small id="postDate"></small>
+
+        <br><br>
+
+        <a href="dashboard.html">
+            Volver
+        </a>
+
+    </div>
+
+    <script>
+
+        const post = JSON.parse(localStorage.getItem("selectedPost"));
+
+        if(post){
+
+            document.getElementById("postTitle").textContent = post.title;
+
+            document.getElementById("postContent").textContent = post.content;
+
+            document.getElementById("postDate").textContent = post.date;
+
+        }
+
+    </script>
+
+</body>
+</html>

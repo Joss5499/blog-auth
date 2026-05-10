@@ -78,3 +78,19 @@ if(logoutBtn){
     });
 
 }
+const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+
+if(
+    window.location.pathname.includes("dashboard.html")
+    && !loggedUser
+){
+    window.location.href = "login.html";
+}
+
+const welcomeUser = document.getElementById("welcomeUser");
+
+if(welcomeUser && loggedUser){
+
+    welcomeUser.textContent = `Bienvenido ${loggedUser.name}`;
+
+}
