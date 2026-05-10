@@ -3,13 +3,13 @@ const postsList = document.getElementById("postsList");
 
 let posts = JSON.parse(localStorage.getItem("posts")) || [];
 
-function savePosts(){
+function savePosts() {
     localStorage.setItem("posts", JSON.stringify(posts));
 }
 
-function renderPosts(){
+function renderPosts() {
 
-    if(!postsList) return;
+    if (!postsList) return;
 
     postsList.innerHTML = "";
 
@@ -49,9 +49,9 @@ function renderPosts(){
 
 }
 
-if(postForm){
+if (postForm) {
 
-    postForm.addEventListener("submit", function(e){
+    postForm.addEventListener("submit", function (e) {
 
         e.preventDefault();
 
@@ -59,11 +59,9 @@ if(postForm){
         const content = document.getElementById("content").value;
 
         const newPost = {
-
             title,
             content,
             date: new Date().toLocaleDateString()
-
         };
 
         posts.push(newPost);
@@ -78,7 +76,7 @@ if(postForm){
 
 }
 
-function deletePost(index){
+function deletePost(index) {
 
     posts.splice(index, 1);
 
@@ -88,12 +86,12 @@ function deletePost(index){
 
 }
 
-function editPost(index){
+function editPost(index) {
 
     const newTitle = prompt("Nuevo título");
     const newContent = prompt("Nuevo contenido");
 
-    if(newTitle && newContent){
+    if (newTitle && newContent) {
 
         posts[index].title = newTitle;
         posts[index].content = newContent;
