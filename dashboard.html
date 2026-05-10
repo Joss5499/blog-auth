@@ -9,17 +9,57 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="dashboard">
 
-        <h1>Bienvenido al Blog</h1>
+        <div class="top-bar">
 
-        <button id="logoutBtn">
-            Cerrar Sesión
-        </button>
+            <h1>Mi Blog</h1>
+
+            <button id="logoutBtn">
+                Cerrar Sesión
+            </button>
+
+        </div>
+
+        <div class="post-form">
+
+            <h2>Crear Publicación</h2>
+
+            <form id="postForm">
+
+                <input 
+                    type="text" 
+                    id="title" 
+                    placeholder="Título"
+                    required
+                >
+
+                <textarea 
+                    id="content"
+                    placeholder="Contenido"
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Publicar
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="posts-container">
+
+            <h2>Publicaciones</h2>
+
+            <div id="postsList"></div>
+
+        </div>
 
     </div>
 
     <script src="js/auth.js"></script>
+    <script src="js/blog.js"></script>
 
 </body>
 </html>
